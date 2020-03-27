@@ -4,6 +4,7 @@ import 'package:responsive_grid/responsive_grid.dart';
 import 'package:vms/action_button.dart';
 import 'package:vms/appbottombar.dart';
 import 'package:vms/contactus.dart';
+import 'package:vms/report.dart';
 import 'package:vms/volunteer_application.dart';
 
 void main() => runApp(volunteerManagementSystem());
@@ -140,6 +141,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             iconSize: 40,
                             icon: Icon(FontAwesomeIcons.chalkboardTeacher),
                             onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Report()));
                             },
                           ),
                           Text('Reports')
