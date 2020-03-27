@@ -17,13 +17,22 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  flutter_dialogflow:
+  badges:
+  file_picker:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl:
+  intl_translation:
+  cupertino_icons:
+  bot_toast:
+  responsive_grid:
+  sailor:
+  font_awesome_flutter:
+  url_launcher:
 
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.3
 
 dev_dependencies:
   flutter_test:
