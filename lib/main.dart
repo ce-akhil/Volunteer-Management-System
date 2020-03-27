@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 import 'package:vms/action_button.dart';
 import 'package:vms/appbottombar.dart';
+import 'package:vms/volunteer_application.dart';
 
 void main() => runApp(volunteerManagementSystem());
 
@@ -72,6 +73,9 @@ class _volunteerManagementSystemState extends State<volunteerManagementSystem> {
                               iconSize: 40,
                               icon: Icon(FontAwesomeIcons.wpforms),
                               onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => FormView()));
                               },
                             ),
                             Text('Volunteer'),
