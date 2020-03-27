@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:vms/action_button.dart';
 import 'package:vms/appbottombar.dart';
 import 'package:vms/dialog_box.dart';
 
@@ -17,74 +18,25 @@ class FormView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Application Form',
+        ),
+      ),
       drawerDragStartBehavior: DragStartBehavior.down,
 
       body: SafeArea(
+
         child: getForm(context)
       ),
       resizeToAvoidBottomInset: false,
       bottomNavigationBar:  AppBottomBar(),
-      floatingActionButton: _actionButton(context),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButton: AppActionButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
-  _inProgress({String message: 'Loading....'}) {
-    return ListTile(
-      leading: Icon(Icons.hourglass_empty),
-      title: Text(message),
-      trailing: CircularProgressIndicator(),
-    );
-  }
 
-  _noSignedInUser({String message: 'Please Signup.'}) {
-    return InkWell(
-      onTap: () {
-      },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListTile(
-          leading: Icon(Icons.call_to_action),
-          title: Text(message),
-          trailing: Icon(Icons.arrow_forward_ios),
-        ),
-      ),
-    );
-  }
-
-  Future<bool> _warnUserAboutInvalidData() async {
-
-
-    return await showDialog<bool>(
-
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Any hesitation?'),
-          content: const Text(
-              'If you are getting any issue while filling the form we are happy to help. Feel free to contact us.'),
-          actions: <Widget>[
-            FlatButton(
-              child: Text(
-                'YES',
-              ),
-              onPressed: () {
-                Navigator.of(context).pop(true);
-              },
-            ),
-            FlatButton(
-              child: Text(
-                'NO',
-              ),
-              onPressed: () {
-                Navigator.of(context).pop(false);
-              },
-            ),
-          ],
-        );
-      },
-    ) ??
-        false;
-  }
 
   Form getForm(BuildContext context) {
     bool isPortrait = MediaQuery.of(context).orientation == Orientation.portrait
@@ -93,7 +45,6 @@ class FormView extends StatelessWidget {
 
     return Form(
 
-      onWillPop: _warnUserAboutInvalidData,
       child: Scrollbar(
         child: SingleChildScrollView(
           dragStartBehavior: DragStartBehavior.down,
@@ -148,7 +99,6 @@ class FormView extends StatelessWidget {
                   sm: 6,
                   child: ListTile(
                     title: TextFormField(
-                      maxLength: 10,
                       decoration: InputDecoration(
                         border: UnderlineInputBorder(),
                         filled: true,
@@ -156,20 +106,6 @@ class FormView extends StatelessWidget {
                         hintText: 'Zip Postal Code',
                         labelText: 'Your Zip Postal Code',
                       ),
-                      validator: (String value) {
-                        if (value == null) {
-                          return null;
-                        }
-                        if (value.isEmpty) {
-                          return 'Please enter some text';
-                        }
-                        final n = num.tryParse(value);
-                        if (n == null) {
-                          return '"$value" is not a valid number';
-                        }
-                        return null;
-                      },
-                      maxLines: 1,
                     ),
                     trailing: Tooltip(
                       message: "Enter the correct Zip Postal Code of your area",
@@ -274,7 +210,7 @@ class FormView extends StatelessWidget {
                   sm: 6,
                   child: ListTile(
                     title: TextFormField(
-                      maxLength: 10,
+                      maxLength: 100,
                       decoration: InputDecoration(
                         border: UnderlineInputBorder(),
                         filled: true,
@@ -296,7 +232,7 @@ class FormView extends StatelessWidget {
                         }
                         return null;
                       },
-                      maxLines: 1,
+                      maxLines: 3,
                     ),
                     trailing: Tooltip(
                       message: "What specified tasks are you most interseted in working?",
@@ -319,7 +255,7 @@ class FormView extends StatelessWidget {
                   sm: 6,
                   child: ListTile(
                     title: TextFormField(
-                      maxLength: 10,
+                      maxLength: 100,
                       decoration: InputDecoration(
                         border: UnderlineInputBorder(),
                         filled: true,
@@ -340,7 +276,7 @@ class FormView extends StatelessWidget {
                         }
                         return null;
                       },
-                      maxLines: 1,
+                      maxLines: 3,
                     ),
                     trailing: Tooltip(
                       message: "What specified skills and experience you have as a volunteer",
@@ -359,6 +295,11 @@ class FormView extends StatelessWidget {
                   )
               ),
               ResponsiveGridCol(
+                child: RaisedButton(
+                  child: Text('Submit'),
+                    onPressed: (){})
+              ),
+              ResponsiveGridCol(
                 child: SizedBox(
                   height: centerHeight,
                 ),
@@ -370,13 +311,6 @@ class FormView extends StatelessWidget {
     );
   }
 
-  FloatingActionButton _actionButton(BuildContext context) {
-    return FloatingActionButton(
-      tooltip: 'Next',
-      child: Icon(Icons.arrow_forward_ios),
-      onPressed: (){}
-    );
-  }
 }
 
 ResponsiveGridCol _addGap(double tileMargin) {
