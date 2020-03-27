@@ -1,6 +1,6 @@
-# vms
+# Volunteer Management System
 
-A new Flutter application.
+A  Flutter application to monitor volunteer's working hours and their work.
 
 ## Getting Started
 
