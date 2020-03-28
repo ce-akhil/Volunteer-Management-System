@@ -63,7 +63,7 @@ class _ContactUsState extends State<ContactUs> {
                       ],
                     ),
                   ),
-                  //if (isPortrait) _addGap(tileMargin * 3),
+                  if (isPortrait) _addGap(tileMargin * 3),
                   ResponsiveGridCol(
                     xs: 12,
                     sm: 6,
@@ -81,7 +81,7 @@ class _ContactUsState extends State<ContactUs> {
                       ],
                     ),
                   ),
-                  //if (isPortrait) _addGap(tileMargin * 3),
+                  if (isPortrait) _addGap(tileMargin * 3),
                   ResponsiveGridCol(
                     xs: 12,
                     sm: 6,

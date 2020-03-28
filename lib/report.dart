@@ -81,10 +81,3 @@ class Report extends StatelessWidget {
   }
 }
 
-ResponsiveGridCol _addGap(double tileMargin) {
-  return ResponsiveGridCol(
-    child: SizedBox(
-      height: tileMargin,
-    ),
-  );
-}

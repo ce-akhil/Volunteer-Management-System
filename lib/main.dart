@@ -4,6 +4,7 @@ import 'package:responsive_grid/responsive_grid.dart';
 import 'package:vms/action_button.dart';
 import 'package:vms/appbottombar.dart';
 import 'package:vms/contactus.dart';
+import 'package:vms/login.dart';
 import 'package:vms/report.dart';
 import 'package:vms/volunteer_application.dart';
 
@@ -13,15 +14,17 @@ void main() => runApp(volunteerManagementSystem());
 // ignore: camel_case_types
 class volunteerManagementSystem extends StatefulWidget {
 
+
   @override
   _volunteerManagementSystemState createState() => _volunteerManagementSystemState();
 }
 
 class _volunteerManagementSystemState extends State<volunteerManagementSystem> {
-  double tileMargin = 30;
+
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       theme: ThemeData(),
       home: HomeScreen()
@@ -37,11 +40,15 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    bool isPortrait = MediaQuery.of(context).orientation == Orientation.portrait
+        ? true
+        : false;
+    double tileMargin = 30;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Center(
-          child: const Text('VMS'),
+          child: const Text('Volunteer management System'),
         ),
       ),
       bottomNavigationBar: AppBottomBar(),
@@ -53,15 +60,16 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 child: ResponsiveGridRow(
                   children: [
-//                     if (isPortrait) _addGap(tileMargin),
+                   if (isPortrait) _addGap(tileMargin),
                     ResponsiveGridCol(
                       xs: 12,
                       child: SizedBox(
-                          child:
-                          Text('Volunteer management system')
+                        height: (isPortrait) ? 196 : 76,
+                        child:
+                        Image(image: AssetImage("assets/logo/vms.png")),
                       ),
                     ),
-                    /* if (isPortrait) _addGap(tileMargin * 2),*/
+                    if (isPortrait) _addGap(tileMargin * 2),
                     ResponsiveGridCol(
                       xs: 4,
                       child: Column(
@@ -71,6 +79,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             iconSize: 40,
                             icon: Icon(FontAwesomeIcons.user),
                             onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => LoginPage()));
                             },
                           ),
                           Text(
@@ -113,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    /*if (isPortrait) _addGap(tileMargin),*/
+                    if (isPortrait) _addGap(tileMargin),
                     ResponsiveGridCol(
                       xs: 4,
                       child: Column(
@@ -177,4 +188,13 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+ResponsiveGridCol _addGap(double tileMargin) {
+  return ResponsiveGridCol(
+    child: SizedBox(
+      height: tileMargin,
+    ),
+  );
+}
+
 
