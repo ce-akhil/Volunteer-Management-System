@@ -8,6 +8,7 @@ import 'package:vms/events.dart';
 import 'package:vms/login.dart';
 import 'package:vms/report.dart';
 import 'package:vms/theme.dart';
+import 'package:vms/time_tracker.dart';
 
 
 import 'package:vms/volunteer_application.dart';
@@ -122,6 +123,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             iconSize: 40,
                             icon: Icon(FontAwesomeIcons.stopwatch),
                             onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => TimeTracker()));
                             },
                           ),
                           Text('Time Tracker')
