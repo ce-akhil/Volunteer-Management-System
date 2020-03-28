@@ -44,6 +44,8 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
-    - assets/logo/
     - assets/image/
+    - assets/logo/
+
+  uses-material-design: true
 

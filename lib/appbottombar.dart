@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vms/profile.dart';
 
 class AppBottomBar extends StatefulWidget {
@@ -18,15 +19,15 @@ class _AppBottomBarState extends State<AppBottomBar> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           IconButton(
-            icon: Icon(Icons.menu),
+            icon: Icon(FontAwesomeIcons.bars),
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: Icon(FontAwesomeIcons.bell),
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.perm_identity),
+            icon: Icon(FontAwesomeIcons.user),
             onPressed: () {
               Navigator.push(
                   context,
@@ -34,7 +35,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
             },
           ),
           IconButton(
-            icon: Icon(Icons.chat),
+            icon: Icon(FontAwesomeIcons.comment),
             onPressed: () {},
           ),
         ],
