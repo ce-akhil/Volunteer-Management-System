@@ -20,7 +20,7 @@ class _TimeTrackerState extends State<TimeTracker> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: const Text('Volunteer management System'),
+          child: const Text('Time Tracker'),
         ),
       ),
       bottomNavigationBar: AppBottomBar(),
@@ -29,63 +29,104 @@ class _TimeTrackerState extends State<TimeTracker> {
       body: Stack(
         children: <Widget>[
           SingleChildScrollView(
-              child: Container(
-                child: ResponsiveGridRow(
-                  children: [
-                    if (isPortrait) _addGap(tileMargin),
-                    ResponsiveGridCol(
-                      xs: 12,
-                      child: ListTile(
-                        leading: Icon(FontAwesomeIcons.calendar),
-                        title: Text('1 April 2020'),
-                        subtitle: Text('12:07'),
-                        trailing: RaisedButton(
-                          child: Text('Start Session',
-                            style: TextStyle(
-                              color: Color(0xFF512DA8),
-                            ),),
-                            onPressed: null),
-                      ),
-                    ),
-                    if (isPortrait) _addGap(tileMargin),
-                    ResponsiveGridCol(
-                      xs: 12,
-                      child: ListTile(
-                        leading: Icon(FontAwesomeIcons.calendar),
-                        title: Text('5 April 2020'),
-                        subtitle: Text('12:07',
-                         ),
-                        trailing: RaisedButton(
-                            child: Text('Start Session',
-                              style: TextStyle(
-                                color: Color(0xFF512DA8),
-                              ),),
-                            onPressed: null),
-                      ),
-                    ),
-                    if (isPortrait) _addGap(tileMargin),
-                    ResponsiveGridCol(
-                      xs: 12,
-                      child: ListTile(
-                        leading: Icon(FontAwesomeIcons.calendar),
-                        title: Text('10 April 2020'),
-                        subtitle: Text('12:07',
+              child: ResponsiveGridRow(
+                children: [
+                  if (isPortrait) _addGap(tileMargin),
+                  ResponsiveGridCol(
+                    xs: 12,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: RaisedButton(
+                        onPressed: null,
+                        child: Text('1 April 2020',
+                          style: TextStyle(
+                            color: Color(0xFF512DA8),
+                          ),
                         ),
-                        trailing: RaisedButton(
-                            child: Text('Start Session',
-                              style: TextStyle(
-                                color: Color(0xFF512DA8),
-                              ),),
-                            onPressed: null),
+                      ),
+                    )
+                  ),
+                  if (isPortrait) _addGap(tileMargin),
+                  ResponsiveGridCol(
+                    xs: 12,
+                    child: Card(
+                      child: Column(
+                        children: <Widget>[
+                          ListTile(
+                            leading: Icon(FontAwesomeIcons.chalkboardTeacher),
+                            title: Text('Session'),
+                            trailing: Text('Learn To Enter Technology'),
+                          ),
+                          ButtonBar(
+                            children: <Widget>[
+                              RaisedButton(
+                                onPressed: null,
+                                child: Text('Start',
+                                  style: TextStyle(
+                                    color: Color(0xFF512DA8),
+                                  ),),
+                              ),
+                              RaisedButton(
+                                onPressed: null,
+                                child: Text('Stop',
+                                  style: TextStyle(
+                                    color: Color(0xFF512DA8),
+                                  ),),
+                              ),
+                              IconButton(icon: Icon(Icons.info), onPressed: null)
+                            ],
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            child: Text('01:54:23',
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w700
+                            ),),
+                          )
+                        ],
                       ),
                     ),
-                    ResponsiveGridCol(
-                      child: SizedBox(
-                        height: 50,
+                  ),
+                  if (isPortrait) _addGap(tileMargin*0.5),
+                  ResponsiveGridCol(
+                    xs: 12,
+                    child: Card(
+                      child: Column(
+                        children: <Widget>[
+                          ListTile(
+                            leading: Icon(FontAwesomeIcons.chalkboardTeacher),
+                            title: Text('Session'),
+                            trailing: Text('Learn To Enter Technology'),
+                          ),
+                          ButtonBar(
+                            children: <Widget>[
+                              RaisedButton(
+                                onPressed: null,
+                                child: Text('Start',
+                                  style: TextStyle(
+                                    color: Color(0xFF512DA8),
+                                  ),),
+                              ),
+                              RaisedButton(
+                                onPressed: null,
+                                child: Text('Stop',
+                                  style: TextStyle(
+                                    color: Color(0xFF512DA8),
+                                  ),),
+                              ),
+                              IconButton(icon: Icon(Icons.info), onPressed: null)
+                            ],),
+                        ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  ResponsiveGridCol(
+                    child: SizedBox(
+                      height: 50,
+                    ),
+                  ),
+                ],
               )),
         ],
       ),
