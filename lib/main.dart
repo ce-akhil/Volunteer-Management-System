@@ -6,27 +6,28 @@ import 'package:vms/appbottombar.dart';
 import 'package:vms/contactus.dart';
 import 'package:vms/login.dart';
 import 'package:vms/report.dart';
+import 'package:vms/theme.dart';
 import 'package:vms/volunteer_application.dart';
 
-void main() => runApp(volunteerManagementSystem());
+void main() => runApp(MainApp());
 
 
 // ignore: camel_case_types
-class volunteerManagementSystem extends StatefulWidget {
+class MainApp extends StatefulWidget {
 
 
   @override
-  _volunteerManagementSystemState createState() => _volunteerManagementSystemState();
+  _MainAppState createState() => _MainAppState();
 }
 
-class _volunteerManagementSystemState extends State<volunteerManagementSystem> {
+class _MainAppState extends State<MainApp> {
 
 
   @override
   Widget build(BuildContext context) {
 
     return MaterialApp(
-      theme: ThemeData(),
+      theme: themeData,
       home: HomeScreen()
     );
   }
