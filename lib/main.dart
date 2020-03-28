@@ -4,9 +4,12 @@ import 'package:responsive_grid/responsive_grid.dart';
 import 'package:vms/action_button.dart';
 import 'package:vms/appbottombar.dart';
 import 'package:vms/contactus.dart';
+import 'package:vms/events.dart';
 import 'package:vms/login.dart';
 import 'package:vms/report.dart';
 import 'package:vms/theme.dart';
+
+
 import 'package:vms/volunteer_application.dart';
 
 void main() => runApp(MainApp());
@@ -170,9 +173,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           IconButton(
                             iconSize: 40,
                             icon: Icon(FontAwesomeIcons.calendar),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Events()));
+                            },
                           ),
-                          Text('Upcoming Events')
+                          Text('Upcoming'),
+                          Text(' Events')
+
                         ],
                       ),
                     ),

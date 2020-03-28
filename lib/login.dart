@@ -120,7 +120,9 @@ class LoginPage extends StatelessWidget {
       drawerDragStartBehavior: DragStartBehavior.down,
       key: _scaffoldKey,
       appBar: AppBar(
-
+        title: Text(
+          'Login',
+        ),
       ),
       body: SafeArea(
         child: Form(
