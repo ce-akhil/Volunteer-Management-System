@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vms/profile.dart';
 
 class AppBottomBar extends StatefulWidget {
   const AppBottomBar({Key key}) : super(key: key);
@@ -25,8 +26,12 @@ class _AppBottomBarState extends State<AppBottomBar> {
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.arrow_drop_down),
-            onPressed: () {},
+            icon: Icon(Icons.perm_identity),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()));
+            },
           ),
           IconButton(
             icon: Icon(Icons.chat),

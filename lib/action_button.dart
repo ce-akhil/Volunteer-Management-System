@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vms/main.dart';
 
 class AppActionButton extends StatelessWidget {
   const AppActionButton({Key key}) : super(key: key);
@@ -8,9 +9,17 @@ class AppActionButton extends StatelessWidget {
     return FloatingActionButton(
       child: IconButton(
         icon: Icon(Icons.home),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()));
+        },
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomeScreen()));
+      },
     );
   }
 }
