@@ -145,12 +145,12 @@ class _Profile extends State<Profile> {
                     xs: 12,
                     child: SizedBox(
                       child: ListTile(
-                        title: Text('Account Settings'),
+                        title: Text('Settings'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.userCog),
-                          onPressed: () {},
+                          onPressed: null,
                         ),
-                        onTap: () {},
+                        onTap: null,
                       ),
                     ),
                   ),
