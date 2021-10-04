@@ -28,15 +28,15 @@ class _Profile extends State<Profile> {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
-                expandedHeight: 250.0,
-                floating: false,
+                expandedHeight: 240.0,
+                floating: true,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
                     title: Text("Akhil Kumar",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16.0,
+                          fontSize: 8.0,
                         )),
                     background: Image.asset(
                       "assets/image/ak_face.jpg",
@@ -55,7 +55,7 @@ class _Profile extends State<Profile> {
                     xs: 12,
                     child: SizedBox(
                       child: ListTile(
-                        title: Text('Email'),
+                        title: Text('Email Address'),
                         subtitle: Text('ce.akhil@gmail.com'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.envelope),
