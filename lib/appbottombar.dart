@@ -16,15 +16,15 @@ class _AppBottomBarState extends State<AppBottomBar> {
     return BottomAppBar(
       shape: CircularNotchedRectangle(),
       child: new Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           IconButton(
-            icon: Icon(FontAwesomeIcons.bars),
-            onPressed: () {},
+            icon: Icon(FontAwesomeIcons.bell),
+            onPressed: null,
           ),
           IconButton(
-            icon: Icon(FontAwesomeIcons.bell),
-            onPressed: () {},
+            icon: Icon(FontAwesomeIcons.bar),
+            onPressed: null,
           ),
           IconButton(
             icon: Icon(FontAwesomeIcons.user),
@@ -36,7 +36,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
           ),
           IconButton(
             icon: Icon(FontAwesomeIcons.comment),
-            onPressed: () {},
+            onPressed: null,
           ),
         ],
       ),
