@@ -12,7 +12,7 @@ class _EventsState extends State<Events> {
     return  Scaffold(
       appBar: AppBar(
         title: Text(
-          'Events',
+          'Upcoming Events',
         ),
       ),
       body: SafeArea(
@@ -22,10 +22,10 @@ class _EventsState extends State<Events> {
               Container(
                 decoration: BoxDecoration(
                   border:Border.all(
-                    width: 3.0,
+                    width: 2.0,
                   ),
                 ),
-                height: 220.0,
+                height: 200.0, // Always have width in divisible of 8
                 child: Padding(
                   padding: EdgeInsets.all(7),
                   child: Stack(children: <Widget>[
@@ -37,7 +37,7 @@ class _EventsState extends State<Events> {
                             Container(
                               decoration: BoxDecoration(
                               ),
-                              height: 50.0,
+                              height: 56.0,
                               child: ListTile(
                                 leading: Icon(FontAwesomeIcons.hashtag),
                                 title: Text('Upcoming Event'),
@@ -45,7 +45,7 @@ class _EventsState extends State<Events> {
                                 trailing: Text('Delhi'),
                               ),
                             ),
-                            SizedBox(height: 10),
+                           
                             Container(
                               decoration: BoxDecoration(
                               ),
