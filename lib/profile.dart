@@ -33,7 +33,7 @@ class _Profile extends State<Profile> {
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
-                    title: Text("Akhil Kumar",
+                    title: Text("Akhil ",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 8.0,
@@ -55,7 +55,7 @@ class _Profile extends State<Profile> {
                     xs: 12,
                     child: SizedBox(
                       child: ListTile(
-                        title: Text('Email Address'),
+                        title: Text('E-mail Address'),
                         subtitle: Text('ce.akhil@gmail.com'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.envelope),
@@ -70,7 +70,7 @@ class _Profile extends State<Profile> {
                     child: SizedBox(
                       child: ListTile(
                         title: Text('Contact Number'),
-                        subtitle: Text('+91 9729943982'),
+                        subtitle: Text('9729943982'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.mobileAlt),
                           onPressed: () {},
@@ -83,7 +83,7 @@ class _Profile extends State<Profile> {
                     xs: 6,
                     child: SizedBox(
                       child: ListTile(
-                        title: Text('Gender'),
+                        title: Text('SEX'),
                         subtitle: Text('Male'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.userAlt),
@@ -97,7 +97,7 @@ class _Profile extends State<Profile> {
                     xs: 6,
                     child: SizedBox(
                       child: ListTile(
-                        title: Text('Date of Birth'),
+                        title: Text('DOB'),
                         subtitle: Text('15/06/1999'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.calendarAlt),
