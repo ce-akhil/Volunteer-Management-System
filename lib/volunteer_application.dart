@@ -11,8 +11,8 @@ import 'package:responsive_grid/responsive_grid.dart';
 class FormView extends StatelessWidget {
 
 
-  final double tileMargin = 30;
-  final centerHeight = 50.0;
+  final double tileMargin = 24;
+  final centerHeight = 56;
 
 
   @override
@@ -20,7 +20,7 @@ class FormView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Application Form',
+          'Application Form to be submitted',
         ),
       ),
       drawerDragStartBehavior: DragStartBehavior.down,
@@ -60,8 +60,8 @@ class FormView extends StatelessWidget {
                       border: UnderlineInputBorder(),
                       filled: true,
                       icon: Icon(Icons.account_balance_wallet),
-                      hintText: ' Name',
-                      labelText: 'Your complete Name',
+                      hintText: 'Name',
+                      labelText: 'Your complete Name as on Government id',
                     ),
                     validator: (String value) {
                       if (value == null) {
@@ -210,7 +210,7 @@ class FormView extends StatelessWidget {
                   sm: 6,
                   child: ListTile(
                     title: TextFormField(
-                      maxLength: 100,
+                      maxLength: 50p,
                       decoration: InputDecoration(
                         border: UnderlineInputBorder(),
                         filled: true,
