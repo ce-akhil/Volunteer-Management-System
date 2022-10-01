@@ -15,11 +15,11 @@ class _ContactUsState extends State<ContactUs> {
 
   @override
   Widget build(BuildContext context) {
-    const centerHeight = 50.0;
+   
     bool isPortrait = MediaQuery.of(context).orientation == Orientation.portrait
         ? true
         : false;
-    double tileMargin = 30;
+    double tileMargin = 10;
 
     return Stack(
       children: <Widget>[
@@ -53,11 +53,11 @@ class _ContactUsState extends State<ContactUs> {
                       children: <Widget>[
                         CircleAvatar(
                           child: IconButton(
-                            iconSize: 60.0,
+                            iconSize: 30.0,
                             icon: new Icon(Icons.call),
                             onPressed: _launchPhone,
                           ),
-                          radius: 45,
+                          radius: 44,
                         ),
                         Text('Call Us'),
                       ],
@@ -71,7 +71,7 @@ class _ContactUsState extends State<ContactUs> {
                       children: <Widget>[
                         CircleAvatar(
                           child: IconButton(
-                            iconSize: 60.0,
+                            iconSize: 56.0,
                             icon: new Icon(Icons.mail),
                             onPressed: _launchEmail,
                           ),
@@ -81,7 +81,7 @@ class _ContactUsState extends State<ContactUs> {
                       ],
                     ),
                   ),
-                  if (isPortrait) _addGap(tileMargin * 3),
+                  if (isPortrait) _addGap(tileMargin * 6),
                   ResponsiveGridCol(
                     xs: 12,
                     sm: 6,
@@ -89,11 +89,11 @@ class _ContactUsState extends State<ContactUs> {
                       children: <Widget>[
                         CircleAvatar(
                           child: IconButton(
-                            iconSize: 60.0,
+                            iconSize: 44.0,
                             icon: new Icon(FontAwesomeIcons.whatsapp),
                             onPressed: _launchWhatsApp,
                           ),
-                          radius: 45,
+                          radius: 44,
                         ),
                         Text('Message us on Whatsapp'),
                       ],
@@ -101,7 +101,7 @@ class _ContactUsState extends State<ContactUs> {
                   ),
                   ResponsiveGridCol(
                     child: SizedBox(
-                      height: 80,
+                      height: 40,
                     ),
                   ),
                 ],
